@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+ 
+<head>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script>
+  
+  $(document).ready(function() {
+    /* 이 방법으로 이벤트를 걸면, 버튼을 클릭하여 동적으로 추가한 li 에는 이벤트가 걸리지 않는다.
+    $('#demo li').on('click', function() {
+      alert($(this).text());
+    });
+    */
+
+    // 이 방법으로 이벤트를 걸면, 동적으로 추가한 li 에도 이벤트가 걸린다.
+    $('#demo').on('click', 'li', function() {
+      alert($(this).text());
+    });
+
+    $('#demo button').on('click', function() {
+      $('#demo ul').append('<li>added</li>');
+    });
+  });
+
+</script>
+
+</head>
+ 
+<body>
+
+<div id="demo">
+  <button>ADD</button>
+  <ul>
+    <li>test1</li>
+    <li>test2</li>
+    <li>test3</li>
+  </ul>
+</div>
+ 
+</body>
+ 
+</html>

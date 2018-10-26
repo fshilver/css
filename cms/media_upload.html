@@ -1,0 +1,748 @@
+
+
+<!DOCTYPE html>
+<!--
+
+TABLE OF CONTENTS.
+
+Use search to find needed section.
+
+=====================================================
+
+|  1. $BODY                 |  Body                 |
+|  2. $MAIN_NAVIGATION      |  Main navigation      |
+|  3. $NAVBAR_ICON_BUTTONS  |  Navbar Icon Buttons  |
+|  4. $MAIN_MENU            |  Main menu            |
+|  5. $CONTENT              |  Content              |
+
+=====================================================
+
+-->
+
+
+<!--[if IE 8]>         <html class="ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="ie9 gt-ie8"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="gt-ie8 gt-ie9 not-ie"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="_csrf" content="f02a21bc-a633-4416-b0e9-c9c45908a142"/>
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf_header" content="X-CSRF-TOKEN"/>
+    <title>CMS Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- Open Sans font from Google CDN -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+
+    <!-- Pixel Admin's stylesheets -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/pixel-admin.min.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/widgets.min.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/pages.min.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/rtl.min.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/themes.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Get jQuery from Google CDN -->
+    <!--[if !IE]> -->
+    <script type="text/javascript"> window.jQuery || document.write('<script language="JavaScript" src="/cms/js/jquery-2.0.3.js">'+"<"+"/script>"); </script>
+    <!-- <![endif]-->
+    <!--[if lte IE 9]>
+    <script type="text/javascript"> window.jQuery || document.write('<script language="JavaScript" src="/cms/js/jquery-1.8.3.min.js">'+"<"+"/script>"); </script>
+    <![endif]-->
+
+    <!-- Pixel Admin's javascripts -->
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/pixel-admin.min.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="javascripts/ie.min.js"></script>
+    <![endif]-->
+
+    <script language="JavaScript" src="/cms/js/common.js"></script>
+    <script language="JavaScript" src="/cms/js/cms.jquery.extend.js"></script>
+    <script language="javascript">var ctxRoot = "/cms";</script>
+</head>
+
+
+<!-- 1. $BODY ======================================================================================
+    
+    Body
+
+    Classes:
+    * 'theme-{THEME NAME}'
+    * 'right-to-left'      - Sets text direction to right-to-left
+    * 'main-menu-right'    - Places the main menu on the right side
+    * 'no-main-menu'       - Hides the main menu
+    * 'main-navbar-fixed'  - Fixes the main navigation
+    * 'main-menu-fixed'    - Fixes the main menu
+    * 'main-menu-animated' - Animate main menu
+-->
+<body class="theme-default main-menu-animated">
+
+<script>var init = [];</script>
+<!-- Demo script --> <script src="demo/demo.js"></script> <!-- / Demo script -->
+
+<div id="main-wrapper">
+
+
+<!-- 2. $MAIN_NAVIGATION ===========================================================================
+
+    Main navigation
+-->
+    <div id="main-navbar" class="navbar navbar-inverse" role="navigation">
+        
+
+
+        <!-- Main menu toggle -->
+        <button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text">HIDE MENU</span></button>
+        
+        <div class="navbar-inner">
+            <!-- Main navbar header -->
+            <div class="navbar-header">
+
+                <!-- Logo -->
+                <a href="/cms/index.jsp" class="navbar-brand">
+                    <div><img alt="Viettel TV" src="images/pixel-admin/main-navbar-logo.png"></div>
+                    CMS Admin
+                </a> <font size="1" id="cmsVersion"><i>Ver. 1.7.2</i></font>
+
+                <!-- Main navbar toggle -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar-collapse"><i class="navbar-icon fa fa-bars"></i></button>
+
+            </div> <!-- / .navbar-header -->
+
+            <div id="main-navbar-collapse" class="collapse navbar-collapse main-navbar-collapse">
+                <div>
+                    <ul class="nav navbar-nav">
+                        
+                    </ul> <!-- / .navbar-nav -->
+
+                    <div class="right clearfix">
+                        <ul class="nav navbar-nav pull-right right-navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
+                                    <img src="images/pixel-admin/avatar.png" alt="">
+                                    <span>castis&#95;cp</span>
+                                </a>
+                                
+                                
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:openModalWindow('01', '/cms/mymenu/editAccountForm.do');"><i class="dropdown-icon fa fa-edit"></i>&nbsp;&nbsp;Contacts</a></li>
+                                    <li><a href="javascript:openModalWindow('01', '/cms/mymenu/editMyPasswordForm.do');"><i class="dropdown-icon fa fa-edit"></i>&nbsp;&nbsp;Password</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="javascript:logoutForm.submit();"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Logout</a></li>
+                                </ul>
+                                <form name="logoutForm" action="/cms/logout" method="post">
+                                    <input type="hidden" name="_csrf" value="f02a21bc-a633-4416-b0e9-c9c45908a142"/>
+                                </form>
+                            </li>
+                        </ul> <!-- / .navbar-nav -->
+                    </div> <!-- / .right -->
+                </div>
+            </div> <!-- / #main-navbar-collapse -->
+        </div> <!-- / .navbar-inner -->
+
+    </div> <!-- / #main-navbar -->
+<!-- /2. $END_MAIN_NAVIGATION -->
+
+
+<!-- 4. $MAIN_MENU =================================================================================
+
+        Main menu
+        
+        Notes:
+        * to make the menu item active, add a class 'active' to the <li>
+          example: <li class="active">...</li>
+        * multilevel submenu example:
+            <li class="mm-dropdown">
+              <a href="#"><span class="mm-text">Submenu item text 1</span></a>
+              <ul>
+                <li>...</li>
+                <li class="mm-dropdown">
+                  <a href="#"><span class="mm-text">Submenu item text 2</span></a>
+                  <ul>
+                    <li>...</li>
+                    ...
+                  </ul>
+                </li>
+                ...
+              </ul>
+            </li>
+-->
+    <div id="main-menu" role="navigation">
+        
+
+
+
+
+        <div id="main-menu-inner">
+            <div class="menu-content top" id="menu-content-demo">
+                <!-- Menu custom content demo
+                     CSS:        styles/pixel-admin-less/demo.less or styles/pixel-admin-scss/_demo.scss
+                     Javascript: html/assets/demo/demo.js
+                 -->
+                <div>
+                    <div class="text-bg"><span class="text-slim">Welcome,</span> <span class="text-semibold">Viettel</span></div>
+
+                    <img src="demo/avatars/1.jpg" alt="" class="">
+                    <div class="text-bg"><span class="text-slim">Say it your way</span></div>
+                    <a href="#" class="close">&times;</a>
+                </div>
+            </div>
+            <ul class="navigation">
+                
+                
+
+                
+                <li class="mm-dropdown">
+                    <a href="#"><i class="menu-icon fa fa-desktop"></i><span class="mm-text">Content Management</span></a>
+                    <ul>
+                        
+                        <li>
+                            <a tabindex="-1" href="/cms/asset/getMediaUploadListForm.do"><span class="mm-text">Media Upload</span></a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a tabindex="-1" href="/cms/asset/getContentSubsetListForm.do"><span class="mm-text">Asset Management</span></a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a tabindex="-1" href="/cms/asset/listContentGroupForm.do"><span class="mm-text">ContentGroup Management</span></a>
+                        </li>
+                        
+                        
+                        <li class="active">
+                            <a tabindex="-1" href="/cms/asset/getOfferListForm.do"><span class="mm-text">Offer Management</span></a>
+                        </li>
+                        
+                        
+                        <li class="active">
+                            <a tabindex="-1" href="/cms/asset/addOfferComponentsForm.do"><span class="mm-text">Easy Registration</span></a>
+                        </li>
+                         
+                        
+                        <li class="active">
+                            <a tabindex="-1" href="/cms/asset/addAssetOfferForm.do"><span class="mm-text">Easy Registration</span></a>
+                        </li>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <li>
+                            <a tabindex="-1" href="/cms/asset/getSeriesListForm.do"><span class="mm-text">Series Management</span></a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a tabindex="-1" href="/cms/asset/getMidrollPointListForm.do"><span class="mm-text">Mid-roll Point Management</span></a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+
+<!--                <li class="mm-dropdown"> -->
+
+<!--                    <ul> -->
+<!--                     <li tabindex="-1"> -->
+
+<!--                        </li> -->
+<!--                     <li tabindex="-1"> -->
+
+<!--                        </li> -->
+<!--                    </ul> -->
+<!--                </li> -->
+
+                
+                
+            </ul> <!-- / .navigation -->
+        </div> <!-- / #main-menu-inner -->
+
+    </div> <!-- / #main-menu -->
+<!-- /4. $MAIN_MENU -->
+
+
+    <div id="content-wrapper">
+<!-- 5. $CONTENT ===================================================================================
+
+        Content
+-->
+
+        <!-- Content here -->
+        
+
+
+
+
+
+
+<html>
+<head>
+<title>Media Upload</title>
+<style type="text/css" class="init">
+    .cms-left {
+        float:left;
+    }
+    .cms-right {
+        float:right;
+    }
+</style>
+
+<link rel="stylesheet" href="/cms/js/spinner/css/iosOverlay.css">
+<link rel="stylesheet" href="/cms/js/spinner/css/prettify.css">
+<script src="/cms/js/spinner/js/iosOverlay.js"></script>
+<script src="/cms/js/spinner/js/spin.min.js"></script>
+<script src="/cms/js/spinner/js/prettify.js"></script>
+<script src="/cms/js/spinner/js/custom.js"></script>
+<script src="/cms/js/spinner/js/modernizr-2.0.6.min.js"></script>
+<script src="/cms/js/excel.js"></script>
+<script src="/cms/js/moment.js"></script>
+<script src="/cms/js/moment-jdateformatparser.js"></script>
+<script src="/cms/js/bootstrap-datetimepicker.min.js"></script>
+
+<script language="javascript">
+    var statusMap = new Map();
+    $(document).ready(function () {
+        
+        $.ajax({
+            type: "GET",
+            "url": "/cms/asset/getMediaFileUploadStatusMessage.json",
+            success: function(data, textStatus, jqXHR){
+                var i;
+                for (i = 0; i < data.length; i++) {
+                    statusMap.set(data[i].statusCode, data[i].statusMessage);
+                }
+                
+                //Add Select Option (Status Message ) in Search Filter
+                for (var [key, value] of statusMap.entries()) {
+                      $('#uploadStatus').append('<option value="' + key +'">'+ value+'</option>');
+                    }
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                openAlert('Fail To Load Status Message', 'Failure:' + textStatus);
+            }
+        });
+        
+        var table = $('#mediaFileUploadListDataTable').DataTable({
+            "columns": [
+                { "data": "mediaFileId" , "orderable": false },
+                { "data": "fileName" },
+                { "data": "userId" },
+                { "data": "fileSize" },
+                { "data": "cpId" },
+                { "data": "fileUploadStatus" },
+                { "data": "uploadTime" }
+            ],
+            "columnDefs": [
+                
+                {
+                    "render": function (data, type, row) {
+                        return String.format("<label class=\"checkbox-inline\"><input type=\"checkbox\" name=\"mediaFileId\" value='{0}' class=\"px ckb\"/><span class=\"lbl\">&nbsp;</span></label>", row.mediaFileId);
+                    }
+                    , "targets": 0
+                }
+                ,
+                {
+                    "render": function (data, type, row) {
+                        return statusMap.get(row.fileUploadStatus);
+                    }
+                    , "targets": 5
+                }
+            ],
+            "searching": false,
+            "sort" : true,
+            "dom": '<"table-header clearfix"<"cms-left"<"DT-per-page"l>><"DT-lf-right"<"cms-right">>>t<"table-footer clearfix"<"DT-label"i><"DT-pagination"p>>',
+            "dom": '<"table-header clearfix"<"cms-left"<"DT-per-page"l>><"DT-lf-right"<"cms-right">>>t<"table-footer clearfix"<"DT-label"i><"DT-pagination"p>>',
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "/cms/asset/getMediaFileUploadList.json",
+                "type": "POST",
+                "data": function ( d ) {
+                    d.searchType = $("#searchType").val();
+                    d.searchKeyword = $("#searchKeyword").val();
+                    d.uploadStatus = $("#uploadStatus").val();
+                    
+                    d.startTime = $.isBlank($('#startTime').val())?"":String.format("{0} 00:00:00", $('#startTime').val());
+                    d.endTime = $.isBlank($('#endTime').val())?"":String.format("{0} 23:59:59", $('#endTime').val());
+                },
+                "beforeSend": function(jqXHR, settings) {
+                    jqXHR.setRequestHeader('X-CSRF-TOKEN', 'f02a21bc-a633-4416-b0e9-c9c45908a142');
+                },
+                "complete": function(jqXHR, textStatus){
+                }
+            }
+            , "aaSorting" : [[0, "desc"]]
+        });
+        
+        $('.cms-right').html($('#temp_search').html());
+        
+           try {
+                $('#startTime').datetimepicker({
+                    useSeconds: true,
+                    format: moment().toMomentFormatString('yyyy-MM-dd')
+                });
+                $('#endTime').datetimepicker({
+                    useSeconds: true,
+                    format: moment().toMomentFormatString('yyyy-MM-dd')
+                });
+                $("#startTime").on("dp.change",function (e) {
+                    $('#endTime').data("DateTimePicker").setMinDate(e.date);
+                });
+                $("#endTime").on("dp.change",function (e) {
+                    $('#startTime').data("DateTimePicker").setMaxDate(e.date);
+                });
+            } catch (e) {
+                alert("calendar:"+e);
+            }
+        
+        $("#mediaFileUploadListForm #searchButton").click(function() {
+            table.draw(true);
+        });
+        
+        
+        setInterval( function () {
+            table.ajax.reload( null, false ); // user paging is not reset on reload
+        }, 10000 ); 
+        
+        
+        $(document).keydown(function(e) {
+             if (e.keyCode == 27) { // escape key maps to keycode `27`
+              openConfirm('Are you sure you want to close[Upload File] ?',function(result) {
+                    if(result) {
+                        try{
+                            $('#uploadModal').modal('hide'); 
+                            $('#drag-and-drop-zone').dmUploader('destroy');
+                        }catch(e) {
+                            alert (e);
+                        }
+                    }
+                });
+            }
+        });
+        
+    }); //document
+
+    function addMediaFile() {
+        var tUrl = "/cms/asset/addMediaFile.do";
+        $("#uploadModal .modal-body").load(tUrl, function(e){
+            $("#uploadModal").modal('show');
+        });
+    }
+
+    function closeUploadModal() {
+          openConfirm('Are you sure you want to close[Upload File] ?',function(result) {
+                if(result) {
+                    try{
+                        $('#uploadModal').modal('hide'); 
+                        $('#drag-and-drop-zone').dmUploader('destroy');
+                    }catch(e) {
+                        alert (e);
+                    }
+                }
+            });
+    }
+    
+    function checkAll(obj) {
+        $(".ckb").each(function () {
+            var v = this.value;
+            $(this).closest(".checkbox-inline").html("<input type=\"checkbox\" name=\"mediaFileId\" value=" + v + " class=\"px ckb\"" + (eval(obj.value)?" checked":"") + "/><span class=\"lbl\">&nbsp;</span>")
+        });
+        obj.value = !eval(obj.value);
+    }
+    
+    function deleteMediaFile() {
+        if($('input:checked[name=mediaFileId]').map(function(){return this.value}).get().length == 0) {
+//             openAlert('There is no selected [Mid-Roll Point].','');
+            openAlert('There is no selected [Media Asset}].','');
+            return;
+        }
+        openConfirm('Are you sure you want to delete[Media Asset] ?',function(result) {
+            if(result) {
+                try{
+                    $.ajax({
+                        type: "GET",
+                        url: "/cms/asset/deleteMediaFile.do",
+                        data: $('input[name=mediaFileId][type=checkbox]').serialize(),
+                        success: function(data, textStatus, jqXHR){
+                            if (data == 'Success') {
+                                openInform('Success', data, function() {
+                                    location.reload();
+                                });
+                            } else {
+                                openAlert('Fail', data, function() {
+                                });
+                            }
+                        },
+                        beforeSend: function(jqXHR, settings) {
+                            jqXHR.setRequestHeader('X-CSRF-TOKEN', 'f02a21bc-a633-4416-b0e9-c9c45908a142');
+                        },
+                        complete: function(jqXHR, textStatus) {
+                        },
+                        error: function(jqXHR, textStatus, errorThrown){
+                            openAlert('Fail', 'Failure:' + textStatus);
+                        }
+                    });
+                }catch(e) {
+                    alert (e);
+                }
+            }
+        });
+    }
+</script>
+</head>
+<body>
+    <ul class="breadcrumb breadcrumb-page">
+        <div class="breadcrumb-label text-light-gray">You are here: </div>
+        <li>Content Management</li>
+        <li class="active">Media Upload</li>
+    </ul>
+    <div class="page-header">
+        <div class="row">
+            <!-- Page header, center on small screens -->
+            <h1 class="col-xs-12 col-sm-4 text-center text-left-sm"><i class="fa  fa-picture-o page-header-icon"></i>&nbsp;&nbsp;Media Upload</h1>
+        </div>
+    </div> <!-- / .page-header -->
+    
+    <div class="row" id="listDiv">
+        <form id="mediaFileUploadListForm" action="/cms/asset/getMediaUploadListForm.do" method="post">
+            <div class="col-sm-12">
+            
+                <div class="table-primary">
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="table table-striped table-bordered" id="mediaFileUploadListDataTable">
+                        <thead>
+                            <tr>
+                                <th>All <label class="checkbox-inline"><input type="checkbox" onclick='checkAll(this)' value="true" class="px"/><span class="lbl">&nbsp;</span></label></th>
+                                <th>FILE NAME</th>
+                                <th>USER ID</th>
+                                <th>FILE SIZE</th>
+                                <th>CP ID</th>
+                                <th>STATUS</th>
+                                <th>UPLOAD TIME</th>
+                                
+
+
+
+
+
+
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                
+                <div align="right">
+                    <button type="button" class="btn btn-danger" onclick="deleteMediaFile();" id="deleteMediaFileDiv">Delete Media Asset</button>
+                    <button type="button" class="btn btn-primary" onclick="addMediaFile();">Add Media Asset</button>
+                </div>
+            </div>
+        <div>
+<input type="hidden" name="_csrf" value="f02a21bc-a633-4416-b0e9-c9c45908a142" />
+</div></form>
+                
+        <div id="temp_search" style="display:none">
+            <table>
+                <tr>
+                    <td>
+                        
+                        <select id="searchType" name="searchType" class="form-control">
+                            <option value="fileName">FILE NAME</option>
+                            <option value="userId">USER ID</option>
+                            <option value="cpId">CP ID</option>
+                        </select>
+                        <input type="text" id="searchKeyword" name="searchKeyword" class="form-control" placeholder="Search">
+                        <select name="uploadStatus" id="uploadStatus" class="form-control">
+                            <option value="0">-- STATUS --</option>
+                        </select>
+                    </td>
+                    <td>
+                        &nbsp;
+                        <button type="button" class="btn btn-default" id="searchButton">Search</button>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 10px; text-align: right;">
+                        <div id="timeOpt" class="input-group cms-right">
+                            <input id="startTime" name="startTime" class="input-sm form-control" type="text" placeholder="Upload Time(From)" value="">
+                            <span class="input-group-addon">-</span>
+                            <input id="endTime" name="endTime" class="input-sm form-control" type="text" placeholder="Upload Time(To)" value="">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+    
+    <form name="cmdForm" id="cmdForm">
+        <input type="hidden" name="mediaFileId" value="">
+        <input type="hidden" name="_csrf" value="f02a21bc-a633-4416-b0e9-c9c45908a142"/>
+    </form>
+
+
+<!-- $('#cmsModal03').modal('hide'); -->
+<!-- Modal -->
+<div id="uploadModal" class="modal fade" tabindex="-1" role="dialog" style="display: none;" data-backdrop="static"  data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="closeUploadModal();" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="uploadModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+            </div> <!-- / .modal-body -->
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div> <!-- /.modal -->
+<!-- / Modal -->
+
+
+
+</body>
+</html>
+
+    </div> <!-- / #content-wrapper -->
+    <div id="main-menu-bg"></div>
+</div> <!-- / #main-wrapper -->
+
+
+
+
+<!-- -------------------------------------------------------------- -->
+<!-- --------------------------Modal 구역-------------------------- -->
+
+
+<!-- Modal -->
+<div id="cmsModal01" class="modal fade" tabindex="-1" role="dialog" style="display: none;" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+            </div> <!-- / .modal-body -->
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div> <!-- /.modal -->
+<!-- / Modal -->
+
+<!-- Modal -->
+<div id="cmsModal02" class="modal fade" tabindex="-1" role="dialog" style="display: none;" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+            </div> <!-- / .modal-body -->
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div> <!-- /.modal -->
+<!-- / Modal -->
+
+<!-- Modal -->
+<div id="cmsModal03" class="modal fade" tabindex="-1" role="dialog" style="display: none;" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" onclick="$('#cmsModal03').modal('hide');" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="cmsModal03Label"></h4>
+            </div>
+            <div class="modal-body">
+            </div> <!-- / .modal-body -->
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div> <!-- /.modal -->
+<!-- / Modal -->
+
+<!-- Success -->
+<div id="cms-modals-alerts-success" class="modal modal-alert modal-success fade" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa fa-check-circle"></i>
+            </div>
+            <div class="modal-title">Some alert title</div>
+            <div class="modal-body">Some alert text</div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>-->
+                <button type="button" class="btn btn-success" onclick="$('#cms-modals-alerts-success').modal('hide');">OK</button>
+            </div>
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div> <!-- / .modal -->
+<!-- / Success -->
+
+<!-- Danger -->
+<div id="cms-modals-alerts-danger" class="modal modal-alert modal-danger fade" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa fa-times-circle"></i>
+            </div>
+            <div class="modal-title">Some alert title</div>
+            <div class="modal-body">Some alert text</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="$('#cms-modals-alerts-danger').modal('hide');">OK</button>
+            </div>
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div> <!-- / .modal -->
+<!-- / Danger -->
+
+<!-- Warning -->
+<div id="cms-modals-alerts-warning" class="modal modal-alert modal-warning fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa fa-warning"></i>
+            </div>
+            <div class="modal-title">Confirmation</div>
+            <div class="modal-body">Some alert text</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="confirmFalse" data-dismiss="modal" onclick="$('#cms-modals-alerts-warning .modal-body').html('Cancel')">Cancel</button>
+                <button type="button" class="btn btn-warning" id="confirmTrue" data-dismiss="modal" onclick="$('#cms-modals-alerts-warning .modal-body').html('OK')">OK</button>
+            </div>
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div> <!-- / .modal -->
+<!-- / Warning -->
+
+<script type="text/javascript">
+    $('#cmsModal02').on('show.bs.modal', function() {
+        try {
+            $('#cmsModal01').css('opacity', .5);
+        } catch (e) {}
+    });
+    $('#cmsModal02').on('hidden.bs.modal', function() {
+        try {
+            $('#cmsModal01').css('opacity', 1);
+        } catch (e) {}
+    });
+    
+    $('#cmsModal03').on('show.bs.modal', function() {
+        try {
+            $('#cmsModal02').css('opacity', .5);
+        } catch (e) {}
+    });
+    $('#cmsModal03').on('hidden.bs.modal', function() {
+        try {
+            $('#cmsModal02').css('opacity', 1);
+        } catch (e) {}
+    });
+</script>
+
+
+<!-- --------------------------Modal 구역-------------------------- -->
+<!-- -------------------------------------------------------------- -->
+
+<script type="text/javascript">
+    init.push(function () {
+        // Javascript code here
+    });
+    window.PixelAdmin.start(init);
+</script>
+
+</body>
+</html>

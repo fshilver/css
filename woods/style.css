@@ -1,0 +1,174 @@
+body,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h2,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+body {
+    background-color: #0E0E0E;
+    color: orange;
+}
+
+.l-wrapper {
+    margin: 100px auto 50px;
+    max-width: 1280px;
+}
+
+.l-top {
+    background-image: url(images/header-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.l-middle {
+    background-color: #DDDDDD;
+}
+
+.l-bottom {
+    background-color: white;
+}
+
+.l-container {
+    width: 640px;
+    margin: 0 auto;
+}
+
+
+/* grid layout */
+
+.l-row {
+    overflow: hidden;
+    margin: 0 -10px;
+}
+
+.l-col {
+    float: left;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+.l-col-12-12 {
+    width: 100%;
+}
+
+.l-col-11-12 {
+    width: 91.66666667%;
+}
+
+.l-col-10-12 {
+    width: 83.33333333%;
+}
+
+.l-col-9-12 {
+    width: 75%;
+}
+
+.l-col-8-12 {
+    width: 66.66666667%;
+}
+
+.l-col-7-12 {
+    width: 58.33333333%;
+}
+
+.l-col-6-12 {
+    width: 50%;
+}
+
+.l-col-5-12 {
+    width: 41.66666667%;
+}
+
+.l-col-4-12 {
+    width: 33.33333333%;
+}
+
+.l-col-3-12 {
+    width: 25%;
+}
+
+.l-col-2-12 {
+    width: 16.66666667%;
+}
+
+.l-col-1-12 {
+    width: 8.33333333%;
+}
+
+
+.header {
+    margin-top: 58px;
+    position: relative;
+    box-shadow: 15px 15px 0 5px orange inset,
+    -15px 15px 0 5px orange inset;
+}
+
+.header-logo {
+    width: 30%;
+    position: absolute;
+    top: 20%;
+    right: 7%;
+}
+
+.header-contents {
+    width: 50%;
+    padding: 30px 50px;
+}
+
+.header-contents h2 {
+    text-decoration-line: underline;
+    letter-spacing: 0.3em;
+    padding: 20px 0;
+}
+
+.header-contents p {
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+    font-family: arial, sans-serif;
+}
+
+.product {
+    background-color: white;
+    overflow: hidden;
+}
+
+.product-cover {
+    display: block;
+    width: 100%;
+    background-color: orange;
+}
+
+.product-title {
+    overflow: hidden;
+}
+
+.product-title h6 {
+    padding: 0.7em;
+    vertical-align: middle;
+}
+
+.product-title img {
+    float: right;
+    vertical-align: middle;
+    width: 28px;
+}
+
+.copyright {
+    color: darkgray;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 50px;
+    letter-spacing: 0.8em;
+    font-size: 0.8rem;
+}

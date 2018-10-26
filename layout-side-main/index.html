@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .l-side {
+        background-color: orangered;
+        width: 300px;
+        float: left;
+        height: 100%;
+    }
+
+    .l-main {
+        background-color: orange;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    @media ( max-width: 480px ) {
+        .l-side {
+            float: none;
+            width: 100%;
+            height: auto;
+        }
+        .l-main {
+            float: none;
+            height: auto;
+        }
+
+    }
+    </style>
+</head>
+<body>
+
+    <div class="l-side">
+        <pre>
+.l-side {
+    background-color: orangered;
+    width: 200px;
+    float: left;
+    height: 100%;
+}
+        </pre>
+    </div>
+    <div class="l-main">
+        <pre>
+side : main 구조에서
+main 에 overflow: hidden 을 안쓸 경우
+side 에 float 을 주고, main 안에서 clear 를 할 경우 side 의 float 까지 영향을 받는다.
+
+.l-main {
+    background-color: orange;
+    overflow: hidden;
+    height: 100%;
+}
+        </pre>
+    </div>
+    
+</body>
+</html>

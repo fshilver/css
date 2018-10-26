@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <!--
+        width : viewport 가로 크기
+        height : viewport 세로 크기
+        initial-scale : 초기 스케일
+        minimum-scale : 최소 스케일값
+        maximum-scale : 최대 스케일값
+        user-scalable : 확대/축소 허용할 것인지 yes or no
+        -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Pixar</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    
+        <div class="header">
+            <div class="l-wrapper l-wrapper-page">
+                <a class="header-logo" href="#">
+                    <img src="images/header-logo.png">
+                </a>
+                <ul class="header-menu">
+                    <li><a class="is-active" href="index.html">HOME</a></li>
+                    <li><a href="index.html">ABOUT</a></li>
+                    <li><a href="index.html">PORTFOLIO</a></li>
+                    <li><a href="index.html">VIDEO</a></li>
+                    <li><a href="index.html">CONTACT</a></li>
+                </ul>
+                <img class="header-point" src="images/header-point.png">
+            </div>
+        </div>  
+
+        <div class="contents">
+            <div class="l-wrapper l-wrapper-page">
+                <div class="l-side">
+                    <div class="movie movie-blue">
+                        <img src="images/pixar02.png" alt="" class="movie-cover">
+                        <div class="movie-desc">
+                            <h2>The Incredible</h2>
+                            <p>commodo ligula eget dolor.</p>
+                        </div>
+                    </div> 
+                </div>
+
+                <div class="l-main">
+                    <div class="big-movie">
+                        <img class="big-movie-cover" src="images/cover01.png" alt="">
+                        <img class="big-movie-icon" src="images/icon01.png" alt="">
+                        <div class="big-movie-desc">
+                            <!--
+                            h2, h3 는 상위/하위 관계이므로 아래와 같은 markup 은 적절하지 않다. 
+                            -->
+                            <h2>Monster Inc</h2>
+                            <h3>2001</h3>
+                            <div class="big-movie-grade">
+                                <div class="big-movie-grade-color"></div>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis eligendi quidem aliquam ducimus laborum, consequatur fugit similique explicabo! Quasi iure recusandae, dolore atque harum iste velit numquam voluptatibus assumenda similique!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi fuga enim ut esse quia et ipsum, aspernatur placeat omnis impedit nesciunt pariatur similique doloremque laborum vitae ullam itaque aliquid, voluptas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="l-wrapper l-wrapper-page">
+                Copyright by GL HTML
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $('.header-logo').click( function() {
+            $('.header-menu').slideToggle();
+        });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,395 @@
+/* CSS RESET */
+body, ul, h2, h3, p {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+    color: inherit;
+	text-decoration: none;
+}
+
+/*
+반응형 웹사이트의 경우 이와 같이 전체 img 태그에 width 속성을 주면 편하다.
+width: 100%; 로 할 경우에는 작은 아이콘의 이미지까지도 부모 넓이에 맞춰져서 쓸데없이 커지는 경우가 생길 수 있다.
+때문에 max-width 로 설정을 하면, 부모 넓이에 맞춰지지만 원래 이미지 크기의 넓이보다 커지진 않는다.
+넓이가 줄어들 순 있다.(부모 넓이에 맞춰진다.)
+*/
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+
+/* LAYOUT */
+.l-wrapper {
+    /*
+    max-width 를 사용하여 대다수 사용자들이 사용하는 화면 크기를 설정
+    일부 고해상도 사용자들을 위해선 media min-width
+    */
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+}
+
+.l-wrapper.l-wrapper-page {
+    max-width: 1024px;
+}
+
+.l-row:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.l-row {
+    margin: 0 -20px;
+}
+
+.l-row-thin {
+    margin: 0 -5px;
+}
+
+.l-row-thin .l-col {
+    padding: 0 5px;
+}
+
+.l-col {
+    float: left;
+    width: 25%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 초기 layout 잡을 때
+
+.l-wrapper:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.l-sidebar {
+    float: right; 
+    width: 200px;
+    margin-left: 20px;
+}
+
+.l-main {
+    overflow: hidden;
+    
+}
+
+*/
+
+.l-main {
+    max-width: 870px;
+
+}
+
+.l-side {
+    float: right;
+    width: 250px;
+    margin-left: 20px;
+
+}
+
+/*
+ 아래와 같이 class 를 생성하고 사용할 경우,
+ 반응형 웹에서 위/아래로 layout 이 변경되어야 할 때
+ l-left, l-right class 에 float: none; 을 설정해주기만 하면 된다. 간단하다.
+ */
+.l-left {
+    float: left;
+}
+
+.l-right {
+    float: right;
+}
+
+
+/* Typography */
+/* 최상위 부모에게 적용하는 것이 관리가 편하다. */
+html {
+    /*
+    사용자 브라우저에서 글꼴의 크기를 변경할 경우 글씨 크기가 변경되게 하기 위해서는 % 단위를 써야 한다.
+    px 단위를 사용할 경우 글꼴 크기가 브라우저 설정에 관계없이 고정되어 버린다.
+
+    default 값은 16px 이며, 이 값은 계산에 사용하기 힘들기 때문에
+    16px -> 10px 로 만들기 위해 62.5% 로 설정한다.
+    10px 이 전체 기본 font-size 일 경우, 하위 요소에서 1.5rem 으로 설정할 경우 15px 로 계산하기 쉽다.
+     */
+    font-size: 62.5%;
+
+    /*
+    기본값인 normal 로 사용할 경우 font 종류에 따라 line-height 값이 함께 변경되기 때문에
+    layout 이 깨질 수 있다. 따라서 고정적인 높이를 설정해 줄 필요가 있다.
+     */
+    line-height: 1.6;
+}
+
+body {
+
+    /* html tag 에 font-size: 62.5%; 를 지정할 경우 font-size 속성을 지정하지 않은 것들은 너무 작게 보인다.
+    이를 보완하기 위해 html 하위의 body 에서 다시 기본 font-size 를 키워준다.
+     */
+    font-size: 1.4rem;
+}
+
+/* MODULE */
+body {
+	background-color: #181c1f;
+	color: #888;
+}
+
+.header {
+	background-color: #31373e;
+    color: rgba(255,255,255,0.5);
+}
+
+.header-logo {
+	display: inline-block;
+    margin: 20px 0; 
+}
+
+.header-menu {
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.header-menu li {
+    float: left;
+}
+
+.header-menu li a {
+    display: block;
+    padding: 15px 20px;
+}
+
+.header-menu li a:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.header-menu li a.is-active {
+	color: #fff;
+	background-color: #1c1f23;
+}
+
+.header-point {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    z-index: 10;
+    transition: top 1s;
+}
+
+.contents {
+    padding: 20px 0;
+	background-color: #1c1f23;
+}
+
+.movie {
+    background-color: #111;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: block;
+}
+
+.movie-red { color: red; }
+.movie-blue { color: blue; }
+.movie-green { color: green; }
+
+.movie-desc {
+    padding: 20px;
+    border-top: 5px solid;
+}
+
+.movie-desc:hover {
+    box-shadow: inset 0 0 50px currentColor;
+}
+
+.movie-desc h2 {
+    margin-bottom: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.movie-desc h2:before {
+    content: ' ';
+    width: 0.8em;
+    height: 0.8em;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-color: currentColor;
+}
+
+
+/*
+내용이 길어져도 5줄만 출력하고 싶다.
+font 종류가 달라져도 깨지지 않았으면 좋겠다.
+height 5em 으로 하면 안된다. (글자 줄 간격이 어느 정도 확보되어야 하기 때문)
+line-height 1.5 : 현재 font 높이의 1.5배
+height 7.5em : 현재 font 크기의 5배
+*/
+.movie-desc p {
+    color: #888;
+    overflow: hidden;
+    line-height: 1.5;
+    height: 7.5em;
+
+}
+
+.big-movie {
+    background-color: #EEEEEE;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: block;
+}
+
+
+.big-movie-cover {
+    width: 100%;
+
+}
+
+.big-movie-icon {
+    float: left;
+    width: 20%;
+    max-width: 100px;
+    margin: 0 20px;
+    transform: translateY(-50%);
+
+}
+
+
+/*
+    float, margin 과 같이 layout 관련된 속성은 별도의 class로 빼는 것이 좋다.
+    다른 page 에서 "평점" 모듈을 재사용 하기 위해선 padding/,margin 을 0 으로 해야 재사용하기 쉽다.
+*/
+.big-movie-grade {
+    float: right;
+    width: 100px;
+    height: 20px;
+    margin: 10px auto;
+    background-image: url("images/star.png");
+    background-repeat: no-repeat;
+}
+
+.big-movie-grade-color {
+    background-image: url("images/star.png");
+    background-position: left bottom;
+    width: 20px;
+    height: 20px;
+}
+
+.big-movie-desc {
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.big-movie-desc h2 {
+    display: inline-block;
+    color: green;
+}
+
+.big-movie-desc h3 {
+    display: inline-block;
+}
+
+.big-movie-desc p {
+    margin-top: 10px;
+}
+
+.footer {
+	border-top: 1px solid #666;
+	padding: 20px;
+	color: #666;
+}
+
+/* Large Desktop */
+@media ( min-width: 1400px ) {
+
+    .l-wrapper {
+        max-width: 1400px;
+    }
+
+    .l-col {
+        width: 20%;
+    }
+}
+
+/* Tablet */
+@media ( max-width: 768px ) {
+
+    .l-col {
+        width: 33.333333%;
+    }
+
+    .l-side {
+        display: none;
+    }
+
+    .header-menu li {
+        width: 20%;
+    }
+
+    .header-menu li a {
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .header-point {
+        top: -200px;
+    }
+
+}
+
+/* Mobile */
+@media ( max-width: 480px ) {
+
+    html {
+        font-size: 100%;
+    }
+    
+    .l-col {
+        width: 100%;
+    }
+
+    .movie-desc p {
+        height: auto;
+    }
+
+    .header-menu li {
+        width: 100%;
+    }
+
+    .big-movie {
+        text-align: center;
+        font-size: 62.5%;
+    }
+
+    .big-movie-icon {
+        float: none;
+        margin: 0 auto -50px;
+    }
+
+    .big-movie-grade {
+        float: none;
+    }
+
+    .big-movie-desc {
+        padding: 20px;
+    }
+
+}

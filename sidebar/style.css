@@ -1,0 +1,192 @@
+/* CSS RESET */
+body, ul, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    vertical-align:top;
+    max-width:100%;
+    height:auto;
+}
+
+/* LAYOUT */
+.l-wrapper {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.l-wrapper:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.l-row{
+    overflow:hidden;
+    margin:0 -10px;
+}
+
+.l-col{
+    float:left;
+    width:20%;
+    padding:0 10px;
+    box-sizing:border-box;
+}
+
+.l-sidebar {
+    width: 200px;
+    float: right;
+    margin-left: -200px;
+
+    /*
+    l-main 과 l-sidebar 사이에 여백을 주기 위해
+    l-main margin-right 를 주거나 l-sidebar margin-left 를 줄 수 있다.
+    반응형 웹에서 sidebar 가 없어질 시 l-main margin-right 가 남아 있으면 layout 이 깨질 수 있으므로
+    l-sidebar 에 주는 것이 좋다.
+     */
+}
+
+.l-main {
+    float: left;
+    /*
+     width: calc( 100% - 200px );
+     IE9 부터 지원 가능. 호환성은 양호한 편.
+     그러나 layout 관련된 속성은 보수적으로 접근하는 편이 좋다.
+     layout 이 깨지면 모든게 다 엉망이 되기 때문.
+     */  
+    width: 100%;
+    padding-right: 220px;
+    box-sizing: border-box;
+
+}
+
+/* MODULE */
+body {
+    background-color: #000;
+    color: #999;
+}
+
+.header {
+    background-color: dimgray;
+    color: white;
+}
+
+.header-point {
+    position: absolute;
+    right: -50px;
+    top: 0;
+}
+
+.header-logo {
+    display: inline-block;
+    margin: 30px 0;
+}
+
+.header-menu {
+    background-color: darkgray;
+    overflow: hidden;
+}
+
+.header-menu li {
+    float: left;
+}
+
+.header-menu li a {
+    padding: 20px;  
+    display: block;
+}
+
+.contents {
+    background-color: #222;
+    color: #999;
+    padding-top: 20px;
+}
+
+.cartoon {
+    margin-bottom: 20px;
+    background-color: #111;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.cartoon h2 {
+    padding: 20px;
+    border-top: 5px solid;
+    color: red;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cartoon h2.red { color: red; }
+.cartoon h2.orange { color: orange; }
+.cartoon h2.purple { color: mediumpurple; }
+.cartoon h2.blue { color: royalblue; }
+.cartoon h2.gray { color: #666; }
+
+.cartoon p {
+    margin: 0 20px 20px;
+    word-break: break-all;
+    line-height: 1.4;
+    height: 7em;
+    overflow: hidden;
+}
+
+.cartoon_cover{
+    
+}
+
+.footer {
+    background-color: #000;
+    color: #666;
+    padding: 30px 0;
+    border-top: 2px solid #666;
+}
+
+.dummy {
+    background-color: orange;
+    padding: 30px;
+    color: white;
+}
+
+.dummy-orange {
+    background-color: orangered;
+}
+
+@media ( max-width: 768px ) {
+    .header {
+        text-align: center;
+    }
+    .header-point {
+        display: none;
+    }
+    .l-col {
+        width: 33.33333333%;
+    }
+    .header-menu li {
+        width: 20%;
+    }
+}
+
+@media ( max-width: 480px ) {
+    .l-col {
+        width: 100%;
+    }
+    .header-menu li {
+        width: 100%;
+    }
+} 
+
+

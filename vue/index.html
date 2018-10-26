@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue Tutorial</title>
+</head>
+<body>
+
+    <div id="app">
+        <p v-if="seen" v-bind:title="message">{{ msg }}</p>
+
+        <ol>
+            <li v-for="todo in todos">{{ todo.text }}</li>
+        </ol>
+
+        <button v-on:click="reverseMessage">메시지 뒤집기</button>
+        <input type="text" v-model="msg">
+
+        <ul>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ul>
+    </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    })
+    
+    var app = new Vue({
+        el: '#app',
+        data: {
+            seen: true,
+            message: "현재 시각은 " + new Date() + " 입니다.",
+            msg: "이제 나를 볼 수 있어요",
+            todos: [
+                { text: "javascript 배우기" },
+                { text: "Vue 배우기" },
+                { text: "멋진 것 만들기" }
+            ],
+            groceryList: [
+                { id: 0, text: 'Vegetables' },
+                { id: 1, text: 'Cheese' },
+                { id: 2, text: 'Whatever else humans are supposed to eat' }
+            ]
+        },
+        methods: {
+            reverseMessage: function() {
+                this.msg = this.msg.split('').reverse().join('')
+            }
+        }
+
+    });
+
+</script>
+</body>
+</html>

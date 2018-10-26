@@ -1,0 +1,118 @@
+/* CSS Reset */
+
+body,
+ul,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Util | Tool */
+
+.u-clearfix:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+/* Layouts */
+
+.l-wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.l-sidebar {
+    float: right;
+    margin-left: 20px;
+    width: 200px;
+    background-color: white;
+}
+
+.l-main {
+    overflow: hidden;
+}
+
+
+
+/* Module */
+
+.header {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.header-logo {
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.header-menu {
+    background-color: deepskyblue;
+}
+
+.header-menu li {
+    float: left;
+}
+
+.header-menu li a {
+    padding: 20px;
+    display: block;
+}
+
+.header-menu li a:hover {
+    background-color: skyblue;
+}
+
+.header-menu li a.is-active {
+    background-color: white;
+    color: #333;
+}
+
+.contents {
+    background-color: #dfdfdf;
+    padding-bottom: 20px;
+}
+
+.contents-inside {
+    background-color: white;
+    padding: 20px;
+}
+
+/* fields design */
+
+.fields {}
+
+.fields h2 {}
+
+.section {
+    background-color: aquamarine;
+    padding-bottom: 20px;
+    border-bottom: 1px solid red;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.section:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.section-cover {
+    float: left;
+}
+
+.footer {
+    background-color: #222;
+}

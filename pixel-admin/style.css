@@ -1,0 +1,35 @@
+* {
+
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.login-background {
+    background-image: url(img/login_background.jpg);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.login-form {
+    width: 390px;
+    margin: 0 auto;
+    background-color: orangered;
+    padding-top: 100px;
+}
+
+.logo-img {
+    display: block; 
+    text-align: center;
+}
+
+.login-input {
+    width: 100%;
+}
